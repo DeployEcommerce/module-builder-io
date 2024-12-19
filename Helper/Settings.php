@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
 
 class Settings extends AbstractHelper
 {
-    public const string LOG_PREFIX = "DeployEcommerce - Builder IO";
+    public const LOG_PREFIX = "DeployEcommerce - Builder IO";
 
     /**
      * Settings constructor.

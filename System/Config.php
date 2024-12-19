@@ -24,17 +24,17 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Config
 {
-    public const string MODULE_ENABLED = "builder_io/general_settings/enable";
-    public const string BUILDERIO_HEADER_ENABLED = "builder_io/general_settings/builderio_header";
-    public const string INTEGRATION_API_PUBLIC_KEY = "builder_io/api_settings/public_key";
-    public const string INTEGRATION_API_PRIVATE_KEY = "builder_io/api_settings/private_key";
-    public const string INTEGRATION_API_WORSKPACE_ID = "builder_io/api_settings/workspace_id";
-    public const string WEBHOOK_LIFETIME = "builder_io/webhook/lifetime";
-    public const string WEBHOOK_ASYNC_PROCESSING = "builder_io/webhook/async_enable";
-    public const string WEBHOOK_SECRET_KEY = "builder_io/webhook/secret_key";
-    public const string SITEMAP_ENABLE = "builder_io/sitemap/enable";
-    public const string SITEMAP_CHANGEFREQUENCY = "builder_io/sitemap/changefrequency";
-    public const string SITEMAP_PRIORITY = "builder_io/sitemap/priority";
+    public const MODULE_ENABLED = "builder_io/general_settings/enable";
+    public const BUILDERIO_HEADER_ENABLED = "builder_io/general_settings/builderio_header";
+    public const INTEGRATION_API_PUBLIC_KEY = "builder_io/api_settings/public_key";
+    public const INTEGRATION_API_PRIVATE_KEY = "builder_io/api_settings/private_key";
+    public const INTEGRATION_API_WORSKPACE_ID = "builder_io/api_settings/workspace_id";
+    public const WEBHOOK_LIFETIME = "builder_io/webhook/lifetime";
+    public const WEBHOOK_ASYNC_PROCESSING = "builder_io/webhook/async_enable";
+    public const WEBHOOK_SECRET_KEY = "builder_io/webhook/secret_key";
+    public const SITEMAP_ENABLE = "builder_io/sitemap/enable";
+    public const SITEMAP_CHANGEFREQUENCY = "builder_io/sitemap/changefrequency";
+    public const SITEMAP_PRIORITY = "builder_io/sitemap/priority";
 
     /**
      * Config constructor.
