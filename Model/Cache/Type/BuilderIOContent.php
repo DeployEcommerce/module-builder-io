@@ -12,9 +12,9 @@ use Magento\Framework\Cache\Frontend\Decorator\TagScope;
 
 class BuilderIOContent extends TagScope
 {
-    public const string TYPE_IDENTIFIER = 'deployecommerce_builderio_content_caching';
+    public const TYPE_IDENTIFIER = 'deployecommerce_builderio_content_caching';
 
-    public const string CACHE_TAG = 'BUILDERIO_CACHED_CONTENT';
+    public const CACHE_TAG = 'BUILDERIO_CACHED_CONTENT';
 
     /**
      * @param FrontendPool $cacheFrontendPool
