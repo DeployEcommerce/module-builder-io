@@ -1,0 +1,41 @@
+{
+    "name": "deployecommerce/module-builderio",
+    "version": "1.0.0",
+    "description": "A magento 2 extensions that renders Builder.io content.",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-store": "*",
+        "magento/module-cms": "*",
+        "magento/module-backend": "*",
+        "magento/module-url-rewrite": "*"
+    },
+    "keywords": [
+        "magento2",
+        "builder.io",
+        "adobe commerce",
+        "magento"
+    ],
+    "authors": [
+        {
+            "name": "Nathan Chick",
+            "email": "nathan.chick@deploy.co.uk",
+            "homepage": "https://www.deploy.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/DeployEcommerce/module-builderio/issues"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DeployEcommerce\\BuilderIO\\": ""
+        }
+    }
+}

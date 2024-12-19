@@ -1,0 +1,37 @@
+{
+    "builderio_webhook": {
+        "column": {
+            "webhook_id": true,
+            "operation": true,
+            "model_name": true,
+            "owner_id": true,
+            "created_date": true,
+            "id": true,
+            "version": true,
+            "name": true,
+            "model_id": true,
+            "published": true,
+            "meta": true,
+            "priority": true,
+            "query": true,
+            "webhook_data": true,
+            "metrics": true,
+            "variations": true,
+            "last_updated": true,
+            "first_published": true,
+            "preview_url": true,
+            "test_ratio": true,
+            "screenshot": true,
+            "created_by": true,
+            "last_updated_by": true,
+            "folders": true,
+            "html": true
+        },
+        "index": {
+            "BUILDERIO_WEBHOOK_WEBHOOK_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
