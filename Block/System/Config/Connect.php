@@ -9,8 +9,11 @@ declare(strict_types=1);
 
 namespace DeployEcommerce\BuilderIO\Block\System\Config;
 
+use DeployEcommerce\BuilderIO\System\Config;
+use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
 
 /**
  * Class Connect
@@ -25,6 +28,24 @@ class Connect extends Field
      * @var string
      */
     protected $_template = 'DeployEcommerce_BuilderIO::system/config/connect.phtml';
+
+    /**
+     * Connect constructor.
+     *
+     * @param Context $context
+     * @param Config $config
+     * @param array $data
+     * @param SecureHtmlRenderer|null $secureRenderer
+     */
+    public function __construct(
+        Context $context,
+        private Config $config,
+        array $data = [],
+        ?SecureHtmlRenderer $secureRenderer = null
+    ){
+        parent::__construct($context, $data, $secureRenderer);
+    }
+
 
     /**
      * Return element html
@@ -63,6 +84,7 @@ class Connect extends Field
             [
                 'id' => 'connect_button',
                 'label' => __('Connect to Builder.io Workspace'),
+                'disabled' => !$this->config->getPublicKey() && !$this->config->getPrivateKey(),
             ]
         );
 
