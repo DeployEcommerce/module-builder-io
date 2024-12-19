@@ -10,6 +10,7 @@
     <body>
         <referenceContainer name="content">
             <block class="DeployEcommerce\BuilderIO\Block\Cms\Page" name="cms_page"/>
+            <referenceBlock name="'page.main.title" remove="true"/>
         </referenceContainer>
     </body>
 </page>
