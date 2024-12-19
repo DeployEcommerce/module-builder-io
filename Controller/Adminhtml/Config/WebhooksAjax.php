@@ -25,6 +25,7 @@ use Magento\Framework\Serialize\Serializer\Json;
  */
 class WebhooksAjax extends Action
 {
+    private const FALLBACK_EDITOR_URL = 'https://preview.builder.codes?model=page&previewing=true';
 
     /**
      * WebhooksAjax constructor.
@@ -86,17 +87,23 @@ class WebhooksAjax extends Action
 
         $counter = 0;
         foreach ($data['data']['models'] as $model) {
+
+            if($this->config->getFallbackEditor($store)) {
+                $preview_url = self::FALLBACK_EDITOR_URL;
+            } else {
+                $preview_url = $this->config->getStoreUrl($store) . 'builderio/preview/page';
+            }
+
             $updateResponse = $this->adminApi->postContent(
                 sprintf(
                     "{\n\t\"query\": \"mutation{updateModel(body:{id:\\\"%s\\\" data:{editingUrlLogic:\\\"%s\\\", webhooks:[{disablePayload:false url:\\\"%s\\\" customHeaders:[{name:\\\"x-builderio-secret-key\\\" value:\\\"%s\\\"}]}]}}){id}}\",\n\t\"variables\": {}\n}",
                     $model['id'],
-                    "return '" . $this->config->getStoreUrl($store) . 'builderio/preview/page' . "';",
+                    "return '" . $preview_url . "';",
                     $this->config->getStoreUrl($store) . 'builderio/webhooks/'.$model['kind'],
                     $this->config->getWebhookSecretKey($store)
                 ),
                 $store
             );
-
 
             if ($updateResponse->getStatusCode() === 200) {
                 $counter++;

@@ -26,6 +26,7 @@ class Config
 {
     public const MODULE_ENABLED = "builder_io/general_settings/enable";
     public const BUILDERIO_HEADER_ENABLED = "builder_io/general_settings/builderio_header";
+    public const FALLBACK_EDITOR = "builder_io/general_settings/fallback_editor";
     public const INTEGRATION_API_PUBLIC_KEY = "builder_io/api_settings/public_key";
     public const INTEGRATION_API_PRIVATE_KEY = "builder_io/api_settings/private_key";
     public const INTEGRATION_API_WORSKPACE_ID = "builder_io/api_settings/workspace_id";
@@ -68,6 +69,17 @@ class Config
     public function getBuilderioHeader()
     {
         return $this->scopeConfig->isSetFlag(self::BUILDERIO_HEADER_ENABLED);
+    }
+
+    /**
+     * Get the fallback editor for the Builder.io integration.
+     *
+     * @param null|int|string $storeId
+     * @return bool
+     */
+    public function getFallbackEditor($storeId = null)
+    {
+        return $this->scopeConfig->isSetFlag(self::FALLBACK_EDITOR, ScopeInterface::SCOPE_STORE, $storeId);
     }
 
     /**

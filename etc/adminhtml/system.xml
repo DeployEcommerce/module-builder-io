@@ -44,6 +44,13 @@
                     Builder.io]]></comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="fallback_editor" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Use Fallback Editor</label>
+                    <comment><![CDATA[When using a Luma based theme it often needed to use the fallback editor due to
+                    poor performance.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
             <group id="api_settings" sortOrder="10" showInStore="1"
                    translate="label">

@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/compatible-compatible?style=for-the-badge&label=Hyv%C3%A4&labelColor=%230A144B&color=%230A23B9%20)
+
 # BuilderIO Integration for Magento 2
 
 This Magento 2 module integrates **Builder.io** into your Magento store, enabling you to manage CMS pages and category headings effortlessly with Builder.io's visual editor.
@@ -5,6 +7,10 @@ This Magento 2 module integrates **Builder.io** into your Magento store, enablin
 ### 🎉 Hyvä compatibility
 
 BuilderIO compatible with Hyvä theme. No comapatibility module is needed.
+
+### Luma compatibility
+
+It may be needed to run in fallback mode for the editor as we have experienced some issues with the Luma theme and general performace/lag.
 
 ## Features
 - **CMS Page Integration:** Manage and design your CMS pages directly from Builder.io.
