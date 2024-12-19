@@ -27,7 +27,7 @@ use Magento\Framework\Serialize\Serializer\Json;
 class AdminApi
 {
 
-    protected const string API_ADMIN_ENDPOINT = 'https://builder.io/api/v2/admin';
+    protected const API_ADMIN_ENDPOINT = 'https://builder.io/api/v2/admin';
 
     /**
      * AdminApi constructor.

@@ -35,7 +35,7 @@ class Page
         'data.metaKeywords'
     ];
 
-    protected const string API_PAGE_ENDPOINT = 'https://cdn.builder.io/api/v3/html/page';
+    protected const API_PAGE_ENDPOINT = 'https://cdn.builder.io/api/v3/html/page';
 
     /**
      * Page constructor.
