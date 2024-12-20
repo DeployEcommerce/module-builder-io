@@ -107,7 +107,7 @@ class Page implements CsrfAwareActionInterface
                 WebhookInterface::OWNER_ID => $data['newValue']['ownerId'],
                 WebhookInterface::CREATED_DATE => $this->dateTime->date(
                     'Y-m-d H:i:s',
-                    $data['newValue']['createdDate']
+                    (floor($data['newValue']['createdDate']/1000))
                 ),
                 WebhookInterface::BUILDERIO_ID => $data['newValue']['id'],
                 WebhookInterface::VERSION => $data['newValue']['@version'],
@@ -122,11 +122,11 @@ class Page implements CsrfAwareActionInterface
                 WebhookInterface::VARIATIONS => $this->json->serialize($data['newValue']['variations']),
                 WebhookInterface::LAST_UPDATED => $this->dateTime->date(
                     'Y-m-d H:i:s',
-                    $data['newValue']['lastUpdated']
+                    (floor($data['newValue']['lastUpdated']/1000))
                 ),
                 WebhookInterface::FIRST_PUBLISHED => $this->dateTime->date(
                     'Y-m-d H:i:s',
-                    $data['newValue']['firstPublished']
+                    (floor($data['newValue']['firstPublished']/1000))
                 ),
                 WebhookInterface::PREVIEW_URL => $data['newValue']['previewUrl'],
                 WebhookInterface::TEST_RATIO => $data['newValue']['testRatio'],
