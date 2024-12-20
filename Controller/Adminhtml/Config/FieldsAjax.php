@@ -91,7 +91,7 @@ class FieldsAjax extends Action
             }
             $updateResponse = $this->adminApi->postContent(
                 sprintf(
-                    "{\n\t\"query\": \"mutation{updateModel(body:{id:\\\"%s\\\" data:{fields:[{name:\\\"Title\\\" helperText:\\\"SEO | Page Title\\\" type:\\\"text\\\" autoFocus:false required:false},{name:\\\"Meta Description\\\" helperText:\\\"SEO | Meta Description\\\" type:\\\"Long text\\\" autoFocus:false required:false},{name:\\\"Meta Keywords\\\" helperText:\\\"SEO | Meta Keywords\\\" type:\\\"text\\\" autoFocus:false required:false}]}}){id}}\",\n\t\"variables\": {}\n}",
+                    "{\n\t\"query\": \"mutation{updateModel(body:{id:\\\"%s\\\" data:{fields:[{name:\\\"Title\\\" helperText:\\\"SEO page title\\\" type:\\\"text\\\" autoFocus:false required:false},{name:\\\"Description\\\" helperText:\\\"SEO page Description\\\" type:\\\"Long text\\\" autoFocus:false required:false},{name:\\\"Keywords\\\" helperText:\\\"SEO page keywords\\\" type:\\\"text\\\" autoFocus:false required:false}]}}){id}}\",\n\t\"variables\": {}\n}",
                     $model['id']
                 ),
                 $store

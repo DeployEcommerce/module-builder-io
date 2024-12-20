@@ -106,8 +106,8 @@ class Handler
             ->setBuilderioPageId($page['id'])
             ->setUrl($page['data']['url'])
             ->setTitle($page['data']['title'])
-            ->setMetaDescription($page['data']['meta_description']??'')
-            ->setMetaKeywords($page['data']['meta_keywords']??'')
+            ->setMetaDescription($page['data']['description']??'')
+            ->setMetaKeywords($page['data']['keywords']??'')
             ->setStoreIds(implode(
                 ',',
                 $this->config->getMappedStoreFromWorkspace($this->webhook->getOwnerId())
