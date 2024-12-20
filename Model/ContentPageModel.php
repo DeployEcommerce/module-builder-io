@@ -49,6 +49,14 @@ class ContentPageModel extends AbstractModel implements ContentPageInterface, Id
     /**
      * @inheritDoc
      */
+    public function getModelName(): ?string
+    {
+        return $this->getData(self::MODEL_NAME);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getUrl(): ?string
     {
         return $this->getData(self::URL);
@@ -132,6 +140,14 @@ class ContentPageModel extends AbstractModel implements ContentPageInterface, Id
     public function setBuilderioPageId(string $builderioPageId): ContentPageInterface
     {
         return $this->setData(self::BUILDERIO_PAGE_ID, $builderioPageId);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setModelName(string $modelName): ContentPageInterface
+    {
+        return $this->setData(self::MODEL_NAME, $modelName);
     }
 
     /**

@@ -50,6 +50,7 @@
             <column name="id"/>
         </index>
         <column xsi:type="varchar" name="builderio_page_id" nullable="false" />
+        <column xsi:type="varchar" name="model_name" comment="Model Name" default="page" />
         <column xsi:type="varchar" name="url" comment="Url"/>
         <column xsi:type="varchar" name="title" comment="Page Title"/>
         <column xsi:type="text" name="meta_description" comment="Meta Description"/>

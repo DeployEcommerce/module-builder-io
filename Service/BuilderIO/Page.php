@@ -35,7 +35,7 @@ class Page
         'data.metaKeywords'
     ];
 
-    protected const API_PAGE_ENDPOINT = 'https://cdn.builder.io/api/v3/html/page';
+    protected const API_PAGE_ENDPOINT = 'https://cdn.builder.io/api/v3/html/';
 
     /**
      * Page constructor.
@@ -60,11 +60,11 @@ class Page
      * @return mixed The content fetched from the API or an empty string on failure.
      * @throws GuzzleException If an error occurs during the request.
      */
-    public function fetchContentApi($url): mixed
+    public function fetchContentApi($url, $model = 'page'): mixed
     {
         $content = '';
         $apiResult = $this->builderIO->getRequest(
-            self::API_PAGE_ENDPOINT,
+            self::API_PAGE_ENDPOINT . $model,
             [
             'url' => $url,
             'limit' => 1,

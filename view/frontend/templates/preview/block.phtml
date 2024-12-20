@@ -17,9 +17,8 @@ use DeployEcommerce\BuilderIO\ViewModel\Preview\Page;
  * @var Page $viewModel
  */
 $viewModel = $block->getViewModel();
-$builderioModel = $block->getBuilderioModel();
 ?>
 <builder-component
-    model="<?= $escaper->escapeHtmlAttr($builderioModel); ?>"
+    model="<?= $escaper->escapeHtmlAttr($viewModel->getModelName()); ?>"
     api-key="<?= $escaper->escapeHtmlAttr($viewModel->getApiKey()); ?>"
 ></builder-component>

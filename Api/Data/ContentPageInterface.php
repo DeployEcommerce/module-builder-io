@@ -21,6 +21,7 @@ interface ContentPageInterface
 
     public const ID = 'id';
     public const BUILDERIO_PAGE_ID = 'builderio_page_id';
+    public const MODEL_NAME = 'model_name';
     public const URL = 'url';
     public const TITLE = 'title';
     public const META_DESCRIPTION = 'meta_description';
@@ -44,6 +45,14 @@ interface ContentPageInterface
      * @return string|null
      */
     public function getBuilderioPageId(): ?string;
+
+    /**
+     * Get the model name.
+     *
+     * @return string|null
+     */
+    public function getModelName(): ?string;
+
     /**
      * Get the URL.
      *
@@ -122,6 +131,14 @@ interface ContentPageInterface
      * @return ContentPageInterface
      */
     public function setBuilderioPageId(string $builderioPageId): ContentPageInterface;
+
+    /**
+     * Set the model name.
+     *
+     * @param string $modelName
+     * @return ContentPageInterface
+     */
+    public function setModelName(string $modelName): ContentPageInterface;
 
     /**
      * Set the URL.

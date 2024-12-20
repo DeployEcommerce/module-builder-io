@@ -14,7 +14,7 @@
     <body>
         <referenceContainer name="content">
             <referenceBlock name="cms_page" remove="true"/>
-            <block name="builderio.preview.cms.page" template="DeployEcommerce_BuilderIO::preview/block.phtml">
+            <block name="builderio.preview.page" template="DeployEcommerce_BuilderIO::preview/block.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">
                         DeployEcommerce\BuilderIO\ViewModel\Preview\Page

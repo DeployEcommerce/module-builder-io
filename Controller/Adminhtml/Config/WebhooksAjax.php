@@ -64,7 +64,7 @@ class WebhooksAjax extends Action
         }
 
         $response = $this->adminApi->postContent(
-            "{\n\t\"query\": \"query{settings id models{id kind}}\",\n\t\"variables\": {}\n}",
+            "{\n\t\"query\": \"query{settings id models{id name kind}}\",\n\t\"variables\": {}\n}",
             $store
         );
 
@@ -91,7 +91,7 @@ class WebhooksAjax extends Action
             if($this->config->getFallbackEditor($store)) {
                 $preview_url = self::FALLBACK_EDITOR_URL;
             } else {
-                $preview_url = $this->config->getStoreUrl($store) . 'builderio/preview/page';
+                $preview_url = $this->config->getStoreUrl($store) . 'builderio/preview/page?model=' . $model['name'];
             }
 
             $updateResponse = $this->adminApi->postContent(

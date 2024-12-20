@@ -73,8 +73,9 @@ class Handler
     public function execute(int $webhook_id): void
     {
         $this->webhook = $this->webhookRepository->getById($webhook_id);
+        $meta = $this->json->unserialize($this->webhook->getMeta(), true);
 
-        if ($this->webhook->getModelName() == 'page') {
+        if (isset($meta['kind']) && $meta['kind'] == 'page') {
             if ($this->webhook->getOperation() == 'publish' ||
                 $this->webhook->getOperation() == 'draft') {
                 $this->processPage();
@@ -94,7 +95,9 @@ class Handler
     private function processPage()
     {
         $url = $this->webhook->getUrlPath();
-        $page = $this->json->unserialize($this->pageService->fetchContentApi($url), true);
+        $model_name = $this->webhook->getModelName();
+
+        $page = $this->json->unserialize($this->pageService->fetchContentApi($url, $model_name), true);
 
         try {
             $contentPage = $this->contentPageRepository->findByBuilderioPageId($page['id']);
@@ -108,6 +111,7 @@ class Handler
             ->setTitle($page['data']['title'])
             ->setMetaDescription($page['data']['description']??'')
             ->setMetaKeywords($page['data']['keywords']??'')
+            ->setModelName($model_name)
             ->setStoreIds(implode(
                 ',',
                 $this->config->getMappedStoreFromWorkspace($this->webhook->getOwnerId())

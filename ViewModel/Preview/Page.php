@@ -8,6 +8,7 @@
 namespace DeployEcommerce\BuilderIO\ViewModel\Preview;
 
 use DeployEcommerce\BuilderIO\System\Config;
+use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 /**
@@ -23,9 +24,11 @@ class Page implements ArgumentInterface
      * Page constructor.
      *
      * @param Config $settings
+     * @param RequestInterface $request
      */
     public function __construct(
-        private Config $settings
+        private Config $settings,
+        private RequestInterface $request
     ) {
     }
 
@@ -37,5 +40,15 @@ class Page implements ArgumentInterface
     public function getApiKey(): string
     {
         return $this->settings->getPublicKey();
+    }
+
+    /**
+     * Get the model name for the preview page.
+     *
+     * @return string
+     */
+    public function getModelName()
+    {
+        return $this->request->getParam('model') ?: 'page';
     }
 }
